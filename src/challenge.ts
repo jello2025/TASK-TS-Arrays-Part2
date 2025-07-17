@@ -13,9 +13,12 @@
  * explanation: the number of elements provided is 5. 5 is odd, so we return empty array
  */
 function secondHalfOfArrayIfItIsEven(fruits: string[]): string[] {
-  // Your code here
-
-  return []; // replace empty array with what you see is fit
+  if (fruits.length % 2 == 0) {
+    fruits.splice(0, fruits.length - fruits.length / 2);
+    return fruits;
+  } else {
+    return [];
+  }
 }
 
 /**
@@ -33,9 +36,15 @@ function secondHalfOfArrayIfItIsEven(fruits: string[]): string[] {
  * - Use string method .slice()
  */
 function youGottaCalmDown(shout: string): string {
-  // Your code here
+  if (shout.includes("!")) {
+    let indexOfExclimation: number = shout.indexOf("!");
 
-  return ""; // replace the empty string with what you see is fit
+    return shout.slice(0, indexOfExclimation + 1);
+  } else {
+    return shout;
+  }
+
+  // replace the empty string with what you see is fit
 }
 
 export { secondHalfOfArrayIfItIsEven, youGottaCalmDown };
